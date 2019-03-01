@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>Gestion De Banque</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" type="text/css" 
+href="../static/css/sytle.css" 
+th:href="@{css/style.css}"/>
+</head>
+<body>
+<div class="container col-md-12 col-xs-12">
+<header class="spacerhaut">
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"> Banque Postale </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#"> Comptes </a></li>
+        <li><a href="#"> Clients </a></li>
+      </ul>
+       
+      <ul class="nav navbar-nav navbar-right">
+        <li> 
+          <form class="navbar-form navbar-left" action="/action_page.php">
+             <div class="input-group">
+               <input type="text" class="form-control" placeholder="Search">
+                  <div class="input-group-btn">
+                       <button class="btn btn-default" type="submit">
+                                 <li class="glyphicon glyphicon-search"></i>
+                        </button>
+                  </div>
+            </div>
+            </form> </li>
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> S'inscrire</a></li>
+        <li><a th:href="@{/login?logout}" th:inline="text"> 
+             <span class="glyphicon glyphicon-log-in"></span> [[${#httpServletRequest.remoteUser}]]</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+ </header> 
+ 
+ <section layout:fragment="content"></section>
+ 
+<!-- <footer class="navbar-fixed-bottom">
+		<div class="navbar navbar-inverse ">
+				<ul class="nav navbar-nav">
+					<li><a th:href="@{/operations}"> Operations </a></li>
+		   		    <li><a th:href="@{/comptes}"> Comptes </a></li>
+		   		    <li><a th:href="@{/clients}"> Clients </a></li>
+					<li><a> <small>Copyright @ 31-Janvier- 2019</small></a></li>
+					<li><a> <small>@ adresse :100 rue de la chapelle 75016</small></a></li>
+				</ul>
+		</div>
+	</footer>  -->
+	</div>
+</body>
+</html>

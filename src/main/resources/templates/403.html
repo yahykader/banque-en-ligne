@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<!-- thymeleaf est un moteur de  template  
+qui permet de chercher le produit dans le model et inserer dans la vue-->
+<!--  -->
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="template">
+<head>
+<meta charset="utf-8"/>
+<title>Gestion de Banque </title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<!-- <link rel="stylesheet" type="text/css" 
+href="../static/css/bootstrap.min.css" 
+th:href="@{css/bootstrap.min.css}"/>
+ -->
+</head>
+<body>
+<p>
+<div layout:fragment="content">
+<div class="container col-md-8  col-md-offset-2"> 
+	<div class="panel panel-primary">
+	 <div class="panel-heading"> Probléme d'autorisation </div>
+		 <div class="panel-body text-danger">
+			
+			Vous n'êtes pas autorisé à accéder à cette ressource...
+			
+		  </div>
+ </div></div>
+</div>
+</body>
+</html>
