@@ -1,13 +1,13 @@
 pipeline{
   agent any  
     stages{
+       stage('Build and Package'){
+         steps{ 
+            sh 'C:/ProgramData/chocolatey/lib/maven/apache-maven-3.6.1/bin/mvn package''
+         }}
        stage('Build and Test'){
          steps{ 
-            'mvn verify'
-         }}
-       stage('Generate Reports'){
-         steps{ 
-            cucumber failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
-         }}   
+            sh 'C:/ProgramData/chocolatey/lib/maven/apache-maven-3.6.1/bin/mvn verify''
+         }}  
     }
 }
