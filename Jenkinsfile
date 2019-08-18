@@ -1,10 +1,9 @@
 pipeline{
-
   agent any  
     stages{
        stage('Build and Test'){
          steps{ 
-           bat label: '', script: 'mvn verify'
+            'mvn verify'
          }}
        stage('Generate Reports'){
          steps{ 
